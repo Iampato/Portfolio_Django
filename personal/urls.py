@@ -6,6 +6,10 @@ from filebrowser.sites import site
 from django.contrib.sitemaps.views import sitemap
 from blog.sitemaps import PostSitemap
 
+sitemaps = {
+ 'posts': PostSitemap,
+}
+
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^admin/filebrowser/',include(site.urls)),
