@@ -6,7 +6,7 @@ from .models import Post
 
 def post_list_view(request):
     object_list = Post.published.all()    
-    paginator = Paginator(object_list, 4) # 3 posts in each page   
+    paginator = Paginator(object_list, 4) # 4 posts in each page   
     page = request.GET.get('page')
     try:      
         posts = paginator.page(page)
