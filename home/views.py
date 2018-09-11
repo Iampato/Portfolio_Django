@@ -28,11 +28,11 @@ def contact(request):
             Message = form.cleaned_data['Message']
             Subject = 'DekutShades Contact '
 
-            text = "Dear Patrick,\nSomeone used the dekutshades contact form.\nHere is what was submited:\n %s\n %s\n %s\n %s\n You received this mail, because you are the admin." %(Name,Phone,Email,Message)
+            text = "Dear Patrick,\nSomeone used your Personal contact form.\nHere is what was submited:\n %s\n %s\n %s\n %s\n You received this mail, because you are the admin." %(Name,Phone,Email,Message)
             emailFrom =  settings.EMAIL_HOST_USER 
             emailTo =  '858wpwaweru@gmail.com'
            
-            send_mail(Subject,text,emailFrom,[emailTo],fail_silently=False)
+            send_mail(Subject,text,emailFrom,[emailTo],fail_silently=True)
             instance = contact.save(commit=False)
             instance.save()
             messages.success(request,
