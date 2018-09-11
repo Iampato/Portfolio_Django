@@ -7,6 +7,8 @@ class PostsFeed(Feed):
     title = 'My Blog Feeds'
     link = '/blog/'
     description = 'Our latest Posts!'
+
+    def items(self):
 """
 from django.contrib.syndication.views import Feed
 from django.template.defaultfilters import truncatewords
