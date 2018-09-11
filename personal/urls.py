@@ -13,7 +13,7 @@ sitemaps = {
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^admin/filebrowser/',include(site.urls)),
-   # url('', include('welcome.urls', namespace='welcome', app_name='welcome')),
+    url('', include('home.urls', namespace='home', app_name='home')),
     url('blog/', include('blog.urls', namespace='blog', app_name='blog')),
     url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps},
             name='django.contrib.sitemaps.views.sitemap'),
