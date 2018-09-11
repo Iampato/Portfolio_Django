@@ -6,6 +6,7 @@ from django.contrib.sitemaps.views import sitemap
 class PostsFeed(Feed):
     title = 'My Blog Feeds'
     link = '/blog/'
+    description = 'Our latest Posts!'
 """
 from django.contrib.syndication.views import Feed
 from django.template.defaultfilters import truncatewords
@@ -15,7 +16,7 @@ from django.contrib.sitemaps.views import sitemap
 class PostsFeed(Feed):
     
     
-    description = 'Our latest Posts!'
+    
  
     def items(self):
         return Post.published.all()[:5]
