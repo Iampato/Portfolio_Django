@@ -3,6 +3,8 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.conf.urls.static import static
 from filebrowser.sites import site
+from django.contrib.sitemaps.views import sitemap
+from blog.sitemaps import PostSitemap
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
