@@ -51,10 +51,18 @@ def post_list_view(request):
     return render(request,'blog/list.html',{'page': page,'form':form,'posts': posts})
 
 def post_detail_view(request, year, month, day, post):
+    object_list = Post.published.all()
+    paginator = Paginator(object_list, 4) # 4 posts in each page   
+    page = request.GET.get('page')
+    
+    try:      
+        posts = paginator.page(page)
+    except PageNotAnInteger:    # If page is not an integer deliver the first page
+        posts = paginator.page(1)    
+    except EmptyPage:        # If page is out of range deliver last page of results        
+        posts = paginator.page(paginator.num_pages)
+        
     post = get_object_or_404(Post, slug=post, status='published', publish__year=year, publish__month=month, publish__day=day)
-    return render(request, 'blog/detail.html', {'post': post})
+    return render(request, 'blog/detail.html', {'post': post,'posts': posts})
 
  
-#def post_list_view(request):
-#    posts = Post.published.all()
-#    return render(request, 'blog/post/list.html', {'posts': posts})

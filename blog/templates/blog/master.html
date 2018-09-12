@@ -112,8 +112,41 @@
 </section>
 <!-- .expertise-wrapper -->
         
-        {% include "blog/lastest.html" with page=posts %}
 
+<div class="lastest">
+<section class="section-wrapper portfolio-section">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title">
+                    <h2>Latest Posts</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            {% for post in posts %}            
+            <div class="col-md-6">
+                <a class="portfolio-item" href=" {{ post.get_absolute_url }} ">
+                    <div class="portfolio-thumb">
+                        <img src="{{ post.image.url }}" alt="">
+                    </div>
+
+                    <div class="portfolio-info">
+                        <h3>{{ post.title }}</h3>
+                    </div>
+                    <!-- portfolio-info -->
+                </a>
+                <!-- .portfolio-item -->
+            </div>
+            {% endfor %}
+
+        </div>
+        <!-- /.row -->
+    </div>
+</section>
+<!-- .portfolio -->
+</div>
 <div class="subscribe">
 <section class="expertise-wrapper section-wrapper gray-bg">
      <div class="container-fluid">
