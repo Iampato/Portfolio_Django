@@ -376,10 +376,10 @@
                 <div class="content-item">
                     <h3>Sports</h3>
 
-                    <ul>
-                        <li>>Rugby</li>
-                        <li>>Football</li>
-                    </ul>
+                    <ol>
+                        <li>Rugby</li>
+                        <li>Football</li>
+                    </ol>
 
                 </div>
             
@@ -503,6 +503,14 @@
 
                     </style>
 
+                    {% if messages %}
+                        {% for message in messages %}
+                        <script>
+                            alert(" {{message}} ");
+                        </script>
+                        {% endfor %}
+                    {% endif %}
+
                     <form id="contactForm" action="" method="POST">
                         <div class="form-group">
                                 
@@ -510,24 +518,6 @@
                             {{ form.as_p }}
 
                         </div>
-                        <!--
-                        <div class="form-group">
-                                <label for="InputName">Phone</label>
-                                <input type="number" name="phone" required="" class="form-control" id="InputName"
-                                       placeholder="Full Name">
-                            </div>
-                        <div class="form-group">
-                            <label for="InputEmail">Email address</label>
-                            <input type="email" name="email" required="" class="form-control" id="InputEmail"
-                                   placeholder="Email">
-                        </div>
-                        <div class="form-group">
-                            <label for="message-text" class="control-label">Message</label>
-                            <textarea class="form-control" rows="4" required="" name="message" id="message-text"
-                                      placeholder="Write message"></textarea>
-                        </div>
-
-                        -->
 
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>

@@ -15,11 +15,13 @@
                 </small>
 
                 <p> {{ post.content |safe |truncatewords:42 |linebreaks }} </p>
-                 <a href=" {{ post.get_absolute_url }}">[ Read More ]</a>
+                 <a href=" {{ post.get_absolute_url }}"><button style="border-radius: 8px" type="submit" class="btn btn-primary">Read More</button></a>
             </div>
         </div>
     </div>
+    <br><br>
 
     {% endfor %}
+    {% include "blog/pagination.html" with page=posts %}
 
 {% endblock %}
