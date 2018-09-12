@@ -40,7 +40,7 @@ def post_list_view(request):
                 emailTo =  Email 
                 
                 
-                send_mail(Subject,message,emailFrom,[emailTo],fail_silently=False)
+                send_mail(Subject,message,emailFrom,[emailTo],fail_silently=True)
                 
                 messages.success(request,  "You Successfully subscribed")
 
