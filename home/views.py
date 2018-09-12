@@ -26,7 +26,7 @@ def contact(request):
             Phone = form.cleaned_data['Phone']
             Email = form.cleaned_data['Email'] 
             Message = form.cleaned_data['Message']
-            Subject = 'DekutShades Contact '
+            Subject = 'Resume Contact '
 
             text = "Dear Patrick,\nSomeone used your Personal contact form.\nHere is what was submited:\n %s\n %s\n %s\n %s\n You received this mail, because you are the admin." %(Name,Phone,Email,Message)
             emailFrom =  settings.EMAIL_HOST_USER 
