@@ -127,13 +127,21 @@
              <style>
                  input{
                      width: 100%;
-                     height: 20%;
+                     height: 40px;
                  }
              </style>
              <form id="contactForm" action="" method="POST">
                 <div class="form-group">
                         
-                     {% csrf_token %}
+                    {% if messages %}
+                        {% for message in messages %}
+                        <script>
+                            alert(" {{message}} ");
+                        </script>
+                        {% endfor %}
+                    {% endif %}
+
+                    {% csrf_token %}
                     {{ form.as_p }}
 
                 </div>
