@@ -114,6 +114,42 @@
         
         {% include "blog/lastest.html" with page=posts %}
 
+<section class="expertise-wrapper section-wrapper gray-bg">
+     <div class="container-fluid">
+         <div class="row">
+             <div class="col-md-12">
+               <div class="section-title">
+                     <h2>Subscribe to our Mail</h2>
+               </div>
+             </div>
+
+             <form id="contactForm" action="" method="POST">
+                <div class="form-group">
+                        
+                     {% csrf_token %}
+                    {{ form.as_p }}
+                    <div class="form-group">
+                        <label for="InputName">Name</label>
+                        <input type="text" name="name" required="" class="form-control" id="InputName"
+                               placeholder="Full Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="InputEmail">Email address</label>
+                        <input type="email" name="email" required="" class="form-control" id="InputEmail"
+                               placeholder="Email">
+                    </div>
+
+                </div>
+
+                <button  type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+
+        </div>
+
+    </div>
+</section>      
+    
+
 <footer class="footer">
     <div class="copyright-section">
         <div class="container-fluid">
