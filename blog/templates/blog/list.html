@@ -14,7 +14,7 @@
             <div class="expertise-item">
                 <h2>{{ post.title }}</h2>
             
-                <img style="width:100%" src="{% static 'img/portfolio-3.jpg' %}" alt=""><br>
+                <img style="width:100%" src="{{ post.image.url }}" alt=""><br>
                 <small> <i class="fa fa-user" aria-hidden="true"></i> Posted by {{ post.author }} <b>On</b> 
                     <i class="fa fa-calendar" aria-hidden="true"></i> {{ post.publish }}
                 </small>
