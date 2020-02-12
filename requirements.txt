@@ -1,4 +1,4 @@
-django ==1.11.13
+django ==1.11.28
 
 pillow == 5.1.0
 django-tinymce4-lite == 1.7.2 
